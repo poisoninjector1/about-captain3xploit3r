@@ -1,1 +1,487 @@
 
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer & Marketing Specialist Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- FontAwesome Fallback Icons via CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            bg: '#0b0f19',
+                            card: '#111827',
+                            border: '#1f293d',
+                            cyan: '#00f2fe',
+                            blue: '#4facfe',
+                            purple: '#9b51e0',
+                            neonPink: '#ff007f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    },
+                    boxShadow: {
+                        'neon-cyan': '0 0 15px rgba(0, 242, 254, 0.4)',
+                        'neon-purple': '0 0 15px rgba(155, 81, 224, 0.4)',
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0b0f19;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-panel:hover {
+            border-color: rgba(0, 242, 254, 0.3);
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.15);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #9b51e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .grid-bg {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(31, 41, 61, 0.2) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(31, 41, 61, 0.2) 1px, transparent 1px);
+        }
+
+        .glowing-btn {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .glowing-btn::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(45deg, #00f2fe, #9b51e0, #ff007f);
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 9999px;
+        }
+
+        .glowing-btn:hover::before {
+            opacity: 0.8;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f293d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f2fe;
+        }
+    </style>
+</head>
+<body class="font-sans grid-bg min-h-screen selection:bg-cyber-cyan selection:text-black">
+
+    <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="font-mono text-xl font-bold tracking-wider text-gradient flex items-center gap-2">
+                <i class="fa-solid fa-terminal text-cyber-cyan"></i>
+                <span>DEV<span class="text-white">_HUB</span></span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-mono text-sm">
+                <a href="#hero" class="hover:text-cyber-cyan transition-colors">// Home</a>
+                <a href="#skills" class="hover:text-cyber-cyan transition-colors">// Skills</a>
+                <a href="#projects" class="hover:text-cyber-cyan transition-colors">// Tools</a>
+                <a href="#contact" class="hover:text-cyber-cyan transition-colors">// Contact</a>
+            </nav>
+
+            <a href="#contact" class="px-4 py-2 rounded-full border border-cyber-cyan/40 text-cyber-cyan font-mono text-xs hover:bg-cyber-cyan/10 transition-all shadow-neon-cyan">
+                Let's Talk
+            </a>
+        </div>
+    </header>
+
+    <section id="hero" class="pt-32 pb-20 md:pt-44 md:pb-32 px-4 max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+            
+            <div class="flex-1 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel text-cyber-cyan text-xs font-mono">
+                    <span class="w-2 h-2 rounded-full bg-cyber-cyan animate-pulse"></span>
+                    Available for Deals & Automation Projects
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                    Hi, I'm a <br>
+                    <span class="text-gradient">Web3 & Automation</span>
+                    Specialist
+                </h1>
+
+                <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0">
+                    Architecting custom Python GUI utilities, navigating Web3/Solana ecosystem airdrops, executing targeted CPA traffic strategies, and managing premium digital assets.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#projects" class="glowing-btn px-6 py-3 rounded-full bg-gradient-to-r from-cyber-cyan to-cyber-blue text-black font-semibold text-sm shadow-lg hover:scale-105 transition-transform flex items-center gap-2">
+                        <i class="fa-solid fa-code"></i> Explore Work
+                    </a>
+                    <a href="#contact" class="px-6 py-3 rounded-full glass-panel border border-gray-700 text-white font-semibold text-sm hover:border-cyber-purple hover:text-cyber-purple transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Get in Touch
+                    </a>
+                </div>
+
+                <!-- Social Badges -->
+                <div class="pt-6 flex items-center justify-center lg:justify-start gap-4 font-mono text-xl">
+                    <a href="https://x.com" target="_blank" class="w-10 h-10 rounded-lg glass-panel flex items-center justify-center hover:text-cyber-cyan hover:border-cyber-cyan transition-all">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="https://t.me" target="_blank" class="w-10 h-10 rounded-lg glass-panel flex items-center justify-center hover:text-cyber-blue hover:border-cyber-blue transition-all">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-lg glass-panel flex items-center justify-center hover:text-cyber-purple hover:border-cyber-purple transition-all">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Interactive Terminal/Hero Card -->
+            <div class="flex-1 w-full max-w-md lg:max-w-none">
+                <div class="glass-panel rounded-2xl p-6 shadow-2xl relative overflow-hidden border border-cyber-border">
+                    <div class="flex items-center justify-between pb-4 mb-4 border-b border-gray-800 font-mono text-xs text-gray-400">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                        </div>
+                        <span>system_status.py</span>
+                    </div>
+
+                    <div class="font-mono text-xs sm:text-sm space-y-3 leading-relaxed text-gray-300">
+                        <p class="text-cyber-cyan">&gt; initialize_environment()</p>
+                        <p class="text-green-400">[✔] CustomTkinter Engine Loaded</p>
+                        <p class="text-green-400">[✔] Proxy Parser & Type Detector Active</p>
+                        <p class="text-green-400">[✔] Phantom & MetaMask Wallets Secured</p>
+                        <p class="text-green-400">[✔] CPA Traffic Funnels Connected</p>
+                        <br>
+                        <p class="text-cyber-purple">// Active Mission Statement</p>
+                        <p class="text-gray-400">"Automating complex desktop workflows while capitalizing on high-yield Web3 opportunities and digital growth."</p>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs font-mono">
+                        <span class="text-gray-500">Location: Bangladesh</span>
+                        <span class="text-cyber-cyan flex items-center gap-1">
+                            <i class="fa-solid fa-wifi text-xs"></i> 100% Online
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 px-4 max-w-7xl mx-auto">
+        <div class="text-center space-y-4 mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold font-mono tracking-tight">
+                <span class="text-cyber-cyan">//</span> Skills & Expertise
+            </h2>
+            <p class="text-gray-400 max-w-xl mx-auto text-sm sm:text-base">
+                Multi-faceted domain knowledge bridging desktop application engineering, crypto protocols, and CPA marketing.
+            </p>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 pt-4 font-mono text-xs">
+                <button onclick="filterSkills('all')" class="skill-btn active px-4 py-2 rounded-lg glass-panel border-cyber-cyan text-cyber-cyan hover:border-cyber-cyan transition-all">All</button>
+                <button onclick="filterSkills('python')" class="skill-btn px-4 py-2 rounded-lg glass-panel text-gray-400 hover:border-cyber-cyan hover:text-cyber-cyan transition-all">Python & Tools</button>
+                <button onclick="filterSkills('crypto')" class="skill-btn px-4 py-2 rounded-lg glass-panel text-gray-400 hover:border-cyber-purple hover:text-cyber-purple transition-all">Web3 & Crypto</button>
+                <button onclick="filterSkills('marketing')" class="skill-btn px-4 py-2 rounded-lg glass-panel text-gray-400 hover:border-cyber-blue hover:text-cyber-blue transition-all">Marketing & Sales</button>
+            </div>
+        </div>
+
+        <!-- Skills Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Card 1 -->
+            <div class="skill-card python glass-panel p-6 rounded-2xl transition-all hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-xl bg-cyber-cyan/10 border border-cyber-cyan/30 flex items-center justify-center text-cyber-cyan text-xl mb-4">
+                    <i class="fa-brands fa-python"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Python & GUI Automation</h3>
+                <p class="text-gray-400 text-sm mb-4">Crafting lightweight, multithreaded desktop applications using CustomTkinter and Requests.</p>
+                <div class="flex flex-wrap gap-2 text-xs font-mono">
+                    <span class="px-2 py-1 rounded bg-gray-800 text-cyber-cyan">CustomTkinter</span>
+                    <span class="px-2 py-1 rounded bg-gray-800 text-cyber-cyan">Multi-threading</span>
+                    <span class="px-2 py-1 rounded bg-gray-800 text-cyber-cyan">Proxy Parsers</span>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="skill-card crypto glass-panel p-6 rounded-2xl transition-all hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-xl bg-cyber-purple/10 border border-cyber-purple/30 flex items-center justify-center text-cyber-purple text-xl mb-4">
+                    <i class="fa-brands fa-ethereum"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Web3 & Airdrop Ecosystem</h3>
+                <p class="text-gray-400 text-sm mb-4">Expertise in Solana & EVM chains, participating in high-yield airdrops, and wallet security execution.</p>
+                <div class="flex flex-wrap gap-2 text-xs font-mono">
+                    <span class="px-2 py-1 rounded bg-gray-800 text-cyber-purple">Solana (Phantom)</span>
+                    <span class="px-2 py-1 rounded bg-gray-800 text-cyber-purple">EVM (MetaMask)</span>
+                    <span class="px-2 py-1 rounded bg-gray-800 text-cyber-purple">Drainer Security</span>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="skill-card marketing glass-panel p-6 rounded-2xl transition-all hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-xl bg-cyber-blue/10 border border-cyber-blue/30 flex items-center justify-center text-cyber-blue text-xl mb-4">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">CPA & Traffic Generation</h3>
+                <p class="text-gray-400 text-sm mb-4">Executing targeted campaigns (Email/Zip submit) and conversion optimization via custom tools.</p>
+                <div class="flex flex-wrap gap-2 text-xs font-mono">
+                    <span class="px-2 py-1 rounded bg-gray-800 text-cyber-blue">CPA Marketing</span>
+                    <span class="px-2 py-1 rounded bg-gray-800 text-cyber-blue">Traffic Funnels</span>
+                    <span class="px-2 py-1 rounded bg-gray-800 text-cyber-blue">Lead Gen</span>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="skill-card marketing glass-panel p-6 rounded-2xl transition-all hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-xl bg-cyber-neonPink/10 border border-cyber-neonPink/30 flex items-center justify-center text-cyber-neonPink text-xl mb-4">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Instagram Asset Flipping</h3>
+                <p class="text-gray-400 text-sm mb-4">Managing, building, and selling verified/aged niche Instagram accounts securely to global buyers.</p>
+                <div class="flex flex-wrap gap-2 text-xs font-mono">
+                    <span class="px-2 py-1 rounded bg-gray-800 text-cyber-neonPink">Account Sales</span>
+                    <span class="px-2 py-1 rounded bg-gray-800 text-cyber-neonPink">Growth Hacking</span>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="skill-card python glass-panel p-6 rounded-2xl transition-all hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-xl bg-cyber-cyan/10 border border-cyber-cyan/30 flex items-center justify-center text-cyber-cyan text-xl mb-4">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Proxy & Network Infrastructure</h3>
+                <p class="text-gray-400 text-sm mb-4">Authenticating residential vs datacenter IP classification and multi-protocol proxy handling.</p>
+                <div class="flex flex-wrap gap-2 text-xs font-mono">
+                    <span class="px-2 py-1 rounded bg-gray-800 text-cyber-cyan">ISP/ASN Lookup</span>
+                    <span class="px-2 py-1 rounded bg-gray-800 text-cyber-cyan">User-Agent Spoofing</span>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="skill-card python crypto glass-panel p-6 rounded-2xl transition-all hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-xl bg-cyber-purple/10 border border-cyber-purple/30 flex items-center justify-center text-cyber-purple text-xl mb-4">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">AI Assistant Integration</h3>
+                <p class="text-gray-400 text-sm mb-4">Integrating Gemini models into Python desktop tools with dynamic server fallback error handling.</p>
+                <div class="flex flex-wrap gap-2 text-xs font-mono">
+                    <span class="px-2 py-1 rounded bg-gray-800 text-cyber-purple">Gemini API</span>
+                    <span class="px-2 py-1 rounded bg-gray-800 text-cyber-purple">Error Fallbacks</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 px-4 max-w-7xl mx-auto">
+        <div class="text-center space-y-4 mb-16">
+            <h2 class="text-3xl sm:text-4xl font-bold font-mono tracking-tight">
+                <span class="text-cyber-cyan">//</span> Featured Software Tools
+            </h2>
+            <p class="text-gray-400 max-w-xl mx-auto text-sm sm:text-base">
+                Custom-designed Python desktop applications built for marketing security, proxy validation, and operational automation.
+            </p>
+        </div>
+
+        <div class="space-y-12">
+
+            <!-- Tool 1 -->
+            <div class="glass-panel rounded-2xl p-6 sm:p-8 flex flex-col lg:flex-row items-center gap-8">
+                <div class="flex-1 space-y-4">
+                    <div class="flex items-center gap-2 text-cyber-cyan font-mono text-xs">
+                        <i class="fa-solid fa-bolt"></i> Python GUI Application
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">Proxy Checker & Type Detector</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        A multi-threaded CustomTkinter GUI tool that validates proxy status in real-time. Automatically parses both <code class="text-cyber-cyan">IP:Port</code> and authenticated <code class="text-cyber-cyan">IP:Port:User:Pass</code> formats, identifying whether a proxy is **Residential** or **Datacenter** via ISP/ASN classification.
+                    </p>
+                    <ul class="space-y-2 text-xs font-mono text-gray-300">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-cyber-cyan"></i> Parallel connection checking (ThreadPoolExecutor)
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-cyber-cyan"></i> ISP & Geo-country detection via IP-API integration
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-cyber-cyan"></i> Instant copy-to-clipboard filter for LIVE proxies
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full lg:w-1/2 rounded-xl bg-cyber-bg p-4 border border-gray-800 font-mono text-xs shadow-inner">
+                    <div class="text-gray-500 mb-2">// Sample Tool Output Console</div>
+                    <p class="text-green-400">[LIVE] 103.152.18.18:8080 | IP: 103.152.18.18 | Country: Bangladesh | Type: Residential 🏠 | ISP: Grameenphone</p>
+                    <p class="text-green-400">[LIVE] 185.199.229.156:7492 | IP: 185.199.229.156 | Country: USA | Type: Datacenter 🏢 | ISP: DigitalOcean</p>
+                    <p class="text-red-400">[DEAD] 192.168.1.1:8080</p>
+                </div>
+            </div>
+
+            <!-- Tool 2 -->
+            <div class="glass-panel rounded-2xl p-6 sm:p-8 flex flex-col lg:flex-row-reverse items-center gap-8">
+                <div class="flex-1 space-y-4">
+                    <div class="flex items-center gap-2 text-cyber-purple font-mono text-xs">
+                        <i class="fa-solid fa-user-shield"></i> Automation Utility
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">Cross-Platform User-Agent Generator</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Utility developed to generate unique, OS-specific user agents (Android, iOS, Windows) for anti-detect browser profiles and CPA marketing traffic routing.
+                    </p>
+                    <ul class="space-y-2 text-xs font-mono text-gray-300">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-cyber-purple"></i> Targeted OS version randomization
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-cyber-purple"></i> Essential for proxy testing & CPA offer verification
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full lg:w-1/2 rounded-xl bg-cyber-bg p-4 border border-gray-800 font-mono text-xs shadow-inner">
+                    <div class="text-gray-500 mb-2">// Generated User-Agent Example</div>
+                    <p class="text-cyber-purple break-all">Mozilla/5.0 (Linux; Android 13; SM-S901B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 px-4 max-w-7xl mx-auto">
+        <div class="glass-panel rounded-3xl p-8 sm:p-12 border border-cyber-border relative overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <div class="space-y-6">
+                    <div class="inline-flex items-center gap-2 text-cyber-cyan font-mono text-xs">
+                        <i class="fa-solid fa-envelope"></i> Let's Connect
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold font-mono tracking-tight text-white">
+                        Ready to Collaborate or Buy Accounts?
+                    </h2>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Whether you need a custom Python GUI tool built, want to inquire about available aged Instagram accounts, or discuss Web3/CPA collaborations—feel free to drop a message.
+                    </p>
+
+                    <div class="space-y-4 font-mono text-sm pt-4">
+                        <a href="https://t.me" target="_blank" class="flex items-center gap-4 text-gray-300 hover:text-cyber-cyan transition-colors">
+                            <div class="w-10 h-10 rounded-lg glass-panel flex items-center justify-center text-cyber-cyan">
+                                <i class="fa-brands fa-telegram"></i>
+                            </div>
+                            <span>Telegram: @YourHandle</span>
+                        </a>
+                        <a href="https://x.com" target="_blank" class="flex items-center gap-4 text-gray-300 hover:text-cyber-blue transition-colors">
+                            <div class="w-10 h-10 rounded-lg glass-panel flex items-center justify-center text-cyber-blue">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </div>
+                            <span>X (Twitter): Direct Message</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Inquiry Form -->
+                <form onsubmit="handleFormSubmit(event)" class="space-y-4 font-sans">
+                    <div>
+                        <label class="block text-xs font-mono text-gray-400 mb-1">Your Name</label>
+                        <input type="text" required class="w-full px-4 py-3 rounded-xl bg-cyber-bg border border-gray-800 text-white text-sm focus:outline-none focus:border-cyber-cyan transition-colors" placeholder="e.g. Alex Drake">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-mono text-gray-400 mb-1">Service Needed</label>
+                        <select required class="w-full px-4 py-3 rounded-xl bg-cyber-bg border border-gray-800 text-white text-sm focus:outline-none focus:border-cyber-cyan transition-colors">
+                            <option value="python">Custom Python GUI Tool</option>
+                            <option value="ig">Buy Instagram Accounts</option>
+                            <option value="cpa">CPA Marketing / Traffic Strategy</option>
+                            <option value="crypto">Crypto / Airdrop Collaboration</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-mono text-gray-400 mb-1">Message</label>
+                        <textarea rows="4" required class="w-full px-4 py-3 rounded-xl bg-cyber-bg border border-gray-800 text-white text-sm focus:outline-none focus:border-cyber-cyan transition-colors" placeholder="Tell me about your project or deal request..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyber-cyan to-cyber-purple text-black font-semibold text-sm hover:opacity-90 transition-opacity">
+                        Send Message
+                    </button>
+                    <p id="formStatus" class="text-xs font-mono text-center text-cyber-cyan hidden pt-2">
+                        ✔ Message logged! Redirecting to contact...
+                    </p>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-gray-800/60 py-8 text-center text-xs font-mono text-gray-500">
+        <p>© 2026 Developer Portfolio. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Filter skills functionality
+        function filterSkills(category) {
+            const cards = document.querySelectorAll('.skill-card');
+            const btns = document.querySelectorAll('.skill-btn');
+
+            btns.forEach(btn => btn.classList.remove('border-cyber-cyan', 'text-cyber-cyan'));
+
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'block';
+                } else if (card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Contact form submit simulation
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const status = document.getElementById('formStatus');
+            status.classList.remove('hidden');
+            setTimeout(() => {
+                status.classList.add('hidden');
+                e.target.reset();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
